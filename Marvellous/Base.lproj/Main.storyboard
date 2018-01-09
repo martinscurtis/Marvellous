@@ -84,24 +84,27 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="a2U-fN-pZn">
-                                <rect key="frame" x="16" y="269" width="343" height="378"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="a2U-fN-pZn">
+                                <rect key="frame" x="16" y="268" width="343" height="379"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="8jS-tW-B6h" firstAttribute="top" secondItem="31N-Nw-TOi" secondAttribute="top" constant="8" id="6T4-bV-Mip"/>
                             <constraint firstItem="zrx-aS-T3w" firstAttribute="trailing" secondItem="rpo-Ox-Xne" secondAttribute="trailing" id="7RF-dd-hBv"/>
+                            <constraint firstItem="31N-Nw-TOi" firstAttribute="trailing" secondItem="a2U-fN-pZn" secondAttribute="trailing" constant="16" id="DF8-Nv-KQu"/>
+                            <constraint firstItem="31N-Nw-TOi" firstAttribute="bottom" secondItem="a2U-fN-pZn" secondAttribute="bottom" constant="20" id="Ku8-2R-vCr"/>
                             <constraint firstItem="rpo-Ox-Xne" firstAttribute="top" secondItem="8jS-tW-B6h" secondAttribute="bottom" constant="8" id="NC7-3D-KPk"/>
                             <constraint firstItem="uhQ-Ke-Tuv" firstAttribute="top" secondItem="zrx-aS-T3w" secondAttribute="bottom" constant="8" id="RXS-SH-beh"/>
                             <constraint firstItem="31N-Nw-TOi" firstAttribute="trailing" secondItem="rpo-Ox-Xne" secondAttribute="trailing" constant="16" id="ZcU-Lc-B2T"/>
+                            <constraint firstItem="a2U-fN-pZn" firstAttribute="leading" secondItem="31N-Nw-TOi" secondAttribute="leading" constant="16" id="bWh-d3-yrk"/>
                             <constraint firstItem="rpo-Ox-Xne" firstAttribute="top" secondItem="8jS-tW-B6h" secondAttribute="bottom" constant="8" id="dle-ZK-Ke6"/>
                             <constraint firstItem="zrx-aS-T3w" firstAttribute="top" secondItem="rpo-Ox-Xne" secondAttribute="bottom" constant="8" symbolic="YES" id="fTl-Mc-xWu"/>
                             <constraint firstItem="8jS-tW-B6h" firstAttribute="leading" secondItem="31N-Nw-TOi" secondAttribute="leading" constant="16" id="jm9-FG-Vq2"/>
                             <constraint firstItem="uhQ-Ke-Tuv" firstAttribute="leading" secondItem="31N-Nw-TOi" secondAttribute="leading" constant="16" id="lQv-DI-ahM"/>
                             <constraint firstItem="zrx-aS-T3w" firstAttribute="leading" secondItem="rpo-Ox-Xne" secondAttribute="leading" id="mO3-tZ-oU4"/>
                             <constraint firstItem="31N-Nw-TOi" firstAttribute="trailing" secondItem="8jS-tW-B6h" secondAttribute="trailing" constant="16" id="nc1-hy-E9p"/>
+                            <constraint firstItem="a2U-fN-pZn" firstAttribute="top" secondItem="uhQ-Ke-Tuv" secondAttribute="bottom" constant="130" id="oUZ-xd-ucP"/>
                             <constraint firstItem="rpo-Ox-Xne" firstAttribute="leading" secondItem="31N-Nw-TOi" secondAttribute="leading" constant="16" id="sYQ-tJ-165"/>
                             <constraint firstItem="31N-Nw-TOi" firstAttribute="trailing" secondItem="uhQ-Ke-Tuv" secondAttribute="trailing" constant="16" id="xQD-3A-pqU"/>
                         </constraints>
@@ -152,7 +155,6 @@
         <!--Navigation Controller-->
         <scene sceneID="ihw-nB-Acx">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="bs1-O5-4WA" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="IP4-lI-6Xd" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="0mL-6E-oHv">
@@ -164,6 +166,7 @@
                         <segue destination="UDk-hg-dSy" kind="relationship" relationship="rootViewController" id="bqE-ck-GKY"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bs1-O5-4WA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-836" y="219"/>
         </scene>

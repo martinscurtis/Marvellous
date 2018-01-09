@@ -14,7 +14,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     var detailViewController: DetailViewController? = nil
     
     let client = ApiClient()
-    let url = "https://gateway.marvel.com:443/v1/public/characters?orderBy=name&limit=50&offset=0&apikey="
+    let url = "https://gateway.marvel.com:443/v1/public/characters?orderBy=name&limit=100&offset=0&apikey="
     
     var characters: [Character] = []
     

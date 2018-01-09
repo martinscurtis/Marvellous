@@ -17,5 +17,6 @@ struct Character: Codable {
     
     struct Thumbnail: Codable {
         let path: URL
+        let `extension`: String
     }
 }

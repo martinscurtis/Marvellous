@@ -24,8 +24,8 @@ class DetailViewController: UIViewController {
                 label.text = detail.description
             }
             if let imageView = detailImage {
-                let url = detail.thumbnail.path
-                if let data = try? Data(contentsOf: url) {
+                let url = detail.thumbnail.path.absoluteString + "/standard_fantastic." + detail.thumbnail.extension
+                if let data = try? Data(contentsOf: URL(string: url)!) {
                      imageView.image = UIImage(data: data)!
                 }
             }
