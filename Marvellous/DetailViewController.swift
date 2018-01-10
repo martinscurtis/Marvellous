@@ -14,21 +14,32 @@ class DetailViewController: UIViewController {
     @IBOutlet weak var detailDescriptionLabel: UILabel!
     @IBOutlet weak var detailImage: UIImageView!
     
+    var detailItem: Character? {
+        didSet {
+            // Update the view.
+            configureView()
+        }
+    }
+    
     func configureView() {
         // Update the user interface for the detail item.
-        if let detail = detailItem {
-            if let label = detailNameLabel {
-                label.text = detail.name
-            }
-            if let label = detailDescriptionLabel {
-                label.text = detail.description
-            }
-            if let imageView = detailImage {
-                let url = detail.thumbnail.path.absoluteString + "/standard_fantastic." + detail.thumbnail.extension
-                if let data = try? Data(contentsOf: URL(string: url)!) {
-                     imageView.image = UIImage(data: data)!
-                }
-            }
+        guard let detail = detailItem else {
+            return
+        }
+        
+        if let label = detailNameLabel {
+            label.text = detail.name
+        }
+        if let label = detailDescriptionLabel {
+            label.text = detail.description
+        }
+        
+        guard let imageView = detailImage else {
+            return
+        }
+        let url = detail.thumbnail.path.absoluteString + "/standard_fantastic." + detail.thumbnail.extension
+        if let data = try? Data(contentsOf: URL(string: url)!) {
+             imageView.image = UIImage(data: data)!
         }
     }
     
@@ -41,13 +52,6 @@ class DetailViewController: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
-    }
-    
-    var detailItem: Character? {
-        didSet {
-            // Update the view.
-            configureView()
-        }
     }
     
     

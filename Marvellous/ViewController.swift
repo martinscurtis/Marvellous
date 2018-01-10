@@ -9,43 +9,13 @@
 import UIKit
 import CryptoSwift
 
-class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, URLSessionDelegate {
+class ViewController: UIViewController, UITableViewDelegate, URLSessionDelegate {
     
+    var viewModel: ViewModel?
     var detailViewController: DetailViewController? = nil
-    
-    let client = ApiClient()
-    let url = "https://gateway.marvel.com:443/v1/public/characters?orderBy=name&limit=100&offset=0&apikey="
-    
     var characters: [Character] = []
     
     @IBOutlet weak var table: UITableView!
-    
-     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return characters.count
-    }
-    
-     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = UITableViewCell(style: UITableViewCellStyle.default, reuseIdentifier: "cell")
-        
-        cell.textLabel?.text = characters[indexPath.row].name
-        
-        return cell
-    }
-    
-    func getCharacters() {
-        
-        let ts = Date().timeIntervalSince1970
-        
-        let stringToHash = String(ts) + Config.privateKey.rawValue + Config.publicKey.rawValue
-        
-        let fullUrl = url +
-            Config.publicKey.rawValue +
-            "&ts=" +
-            String(ts) +
-            "&hash=" + stringToHash.md5()
-        
-        client.makeRequest(url: fullUrl, completionHandler: processData)
-    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -54,11 +24,16 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             let controllers = split.viewControllers
             detailViewController = (controllers[controllers.count-1] as! UINavigationController).topViewController as? DetailViewController
         }
+        viewModel = ViewModel(viewController: self)
+        
+        guard let vModel = viewModel else {
+            return
+        }
         
         table.delegate = self
-        table.dataSource = self
+        table.dataSource = vModel
         
-        self.getCharacters()
+        vModel.getCharacters()
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -81,16 +56,6 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
-    }
-    
-    func processData(data: Data?, response: URLResponse?, error: Error?) -> Void {
-        let outputStr  = String(data: data!, encoding: String.Encoding.utf8) as String!
-        let apiResponse = client.decodeResponse(json: outputStr!)
-        characters = apiResponse.data.results
-        
-        DispatchQueue.main.async {
-            self.table.reloadData()
-        }
     }
 }
 

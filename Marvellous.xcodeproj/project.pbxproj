@@ -18,6 +18,10 @@
 		5B444952200544CB0092A421 /* ApiClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B444951200544CB0092A421 /* ApiClient.swift */; };
 		5B77997220026F3A008109DF /* ApiResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B77997120026F3A008109DF /* ApiResponse.swift */; };
 		5B77997420027947008109DF /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B77997320027947008109DF /* DetailViewController.swift */; };
+		5BD47B32200692C500298759 /* Thumbnail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BD47B31200692C500298759 /* Thumbnail.swift */; };
+		5BD47B34200693A200298759 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BD47B33200693A200298759 /* ViewModel.swift */; };
+		5BD47B3720069F3000298759 /* ThumbnailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BD47B3520069F3000298759 /* ThumbnailCell.swift */; };
+		5BD47B3820069F3000298759 /* ThumbnailCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5BD47B3620069F3000298759 /* ThumbnailCell.xib */; };
 		FA5340D8DD88141E3F767444 /* Pods_Marvellous.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8BBF11F41CB7A7664CB406EC /* Pods_Marvellous.framework */; };
 /* End PBXBuildFile section */
 
@@ -36,6 +40,10 @@
 		5B444951200544CB0092A421 /* ApiClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiClient.swift; sourceTree = "<group>"; };
 		5B77997120026F3A008109DF /* ApiResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiResponse.swift; sourceTree = "<group>"; };
 		5B77997320027947008109DF /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		5BD47B31200692C500298759 /* Thumbnail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Thumbnail.swift; sourceTree = "<group>"; };
+		5BD47B33200693A200298759 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
+		5BD47B3520069F3000298759 /* ThumbnailCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThumbnailCell.swift; sourceTree = "<group>"; };
+		5BD47B3620069F3000298759 /* ThumbnailCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ThumbnailCell.xib; sourceTree = "<group>"; };
 		601F3A5A6A153BC577C4CD17 /* Pods-Marvellous.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Marvellous.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Marvellous/Pods-Marvellous.debug.xcconfig"; sourceTree = "<group>"; };
 		8BBF11F41CB7A7664CB406EC /* Pods_Marvellous.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Marvellous.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -95,7 +103,10 @@
 				5B30E401200242CC001F487F /* Config.swift */,
 				5B77997320027947008109DF /* DetailViewController.swift */,
 				5B30E3F120023965001F487F /* ViewController.swift */,
+				5BD47B33200693A200298759 /* ViewModel.swift */,
 				5B30E3F320023965001F487F /* Main.storyboard */,
+				5BD47B3520069F3000298759 /* ThumbnailCell.swift */,
+				5BD47B3620069F3000298759 /* ThumbnailCell.xib */,
 				5B30E3F620023965001F487F /* Assets.xcassets */,
 				5B30E3F820023965001F487F /* LaunchScreen.storyboard */,
 				5B30E3FB20023965001F487F /* Info.plist */,
@@ -109,6 +120,7 @@
 				5B77997120026F3A008109DF /* ApiResponse.swift */,
 				5B44494D200544350092A421 /* PagedResults.swift */,
 				5B44494F2005446F0092A421 /* Character.swift */,
+				5BD47B31200692C500298759 /* Thumbnail.swift */,
 				5B444951200544CB0092A421 /* ApiClient.swift */,
 			);
 			path = Model;
@@ -178,6 +190,7 @@
 			files = (
 				5B30E3FA20023965001F487F /* LaunchScreen.storyboard in Resources */,
 				5B30E3F720023965001F487F /* Assets.xcassets in Resources */,
+				5BD47B3820069F3000298759 /* ThumbnailCell.xib in Resources */,
 				5B30E3F520023965001F487F /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -243,12 +256,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5BD47B34200693A200298759 /* ViewModel.swift in Sources */,
 				5B30E3F220023965001F487F /* ViewController.swift in Sources */,
 				5B30E3F020023965001F487F /* AppDelegate.swift in Sources */,
 				5B4449502005446F0092A421 /* Character.swift in Sources */,
 				5B444952200544CB0092A421 /* ApiClient.swift in Sources */,
 				5B77997420027947008109DF /* DetailViewController.swift in Sources */,
+				5BD47B32200692C500298759 /* Thumbnail.swift in Sources */,
 				5B30E402200242CC001F487F /* Config.swift in Sources */,
+				5BD47B3720069F3000298759 /* ThumbnailCell.swift in Sources */,
 				5B44494E200544350092A421 /* PagedResults.swift in Sources */,
 				5B77997220026F3A008109DF /* ApiResponse.swift in Sources */,
 			);

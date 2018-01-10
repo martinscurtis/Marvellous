@@ -14,9 +14,4 @@ struct Character: Codable {
     let description: String
     let thumbnail: Thumbnail
     let resourceURI: URL
-    
-    struct Thumbnail: Codable {
-        let path: URL
-        let `extension`: String
-    }
 }

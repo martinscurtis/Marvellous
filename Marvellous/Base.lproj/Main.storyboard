@@ -127,7 +127,6 @@
                 <splitViewController id="1nx-8a-kjL" sceneMemberID="viewController">
                     <connections>
                         <segue destination="wSf-HF-mUD" kind="relationship" relationship="masterViewController" id="AUd-n8-ZKd"/>
-                        <segue destination="IP4-lI-6Xd" kind="relationship" relationship="detailViewController" id="G2M-eS-T5u"/>
                     </connections>
                 </splitViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tt2-fe-vH2" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -171,7 +170,4 @@
             <point key="canvasLocation" x="-836" y="219"/>
         </scene>
     </scenes>
-    <inferredMetricsTieBreakers>
-        <segue reference="G2M-eS-T5u"/>
-    </inferredMetricsTieBreakers>
 </document>
