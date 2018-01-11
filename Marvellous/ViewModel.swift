@@ -41,7 +41,7 @@ class ViewModel: NSObject, UITableViewDataSource {
         guard let controller = viewController else {
             return
         }
-        controller.characters = apiResponse.data.results
+        controller.setCharacters(characters: apiResponse.data.results)
         
         DispatchQueue.main.async {
             controller.table.reloadData()
@@ -52,23 +52,22 @@ class ViewModel: NSObject, UITableViewDataSource {
         guard let controller = viewController else {
             return 1
         }
-        return controller.characters.count
+        return controller.getCharacters().count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-//        let cell = UITableViewCell(style: UITableViewCellStyle.default, reuseIdentifier: "cell")
-
         let cell = Bundle.main.loadNibNamed("ThumbnailCell", owner: self, options: nil)?.first as! ThumbnailCell
         
         guard let controller = viewController else {
             return cell
         }
-        let url = controller.characters[indexPath.row].thumbnail.path.absoluteString + "/standard_small." + controller.characters[indexPath.row].thumbnail.extension
+        let characters = controller.getCharacters()
+        
+        let url = characters[indexPath.row].thumbnail.path.absoluteString + "/standard_small." + characters[indexPath.row].thumbnail.extension
         if let data = try? Data(contentsOf: URL(string: url)!) {
             cell.thumbImage.image = UIImage(data: data)!
         }
-         cell.thumbLabel.text = controller.characters[indexPath.row].name
-//        cell.textLabel?.text = controller.characters[indexPath.row].name
+         cell.thumbLabel.text = characters[indexPath.row].name
         
         return cell
     }

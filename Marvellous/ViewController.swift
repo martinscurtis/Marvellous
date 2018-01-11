@@ -48,6 +48,14 @@ class ViewController: UIViewController, UITableViewDelegate, URLSessionDelegate 
         }
     }
     
+    func setCharacters(characters: [Character]) {
+        self.characters = characters
+    }
+    
+    func getCharacters() -> [Character] {
+        return characters
+    }
+    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         // pass any object as parameter, i.e. the tapped row
         performSegue(withIdentifier: "showDetails", sender: indexPath.row)
